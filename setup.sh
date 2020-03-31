@@ -1,13 +1,14 @@
+!/bin/bash
 # get variables
 # -n = name
 # -s = ss3 / ss4
 
 
-while getopts ":n:p:" opt; do
+while getopts ":n:s:" opt; do
     case $opt in
-        a) ssversion="$OPTARG"
+        n) name="$OPTARG"
         ;;
-        p) name="$OPTARG"
+        s) ssversion="$OPTARG"
         ;;
         \?) echo "Invalid option -$OPTARG" >&2
         ;;
@@ -22,12 +23,9 @@ printf "Silverstripe Version is: %s\n" "$ssversion"
 
 # composer install
 
-#!/bin/bash
 
 # add site to /etc/hosts
 
-APPEND='Some/Path which is/variable'
-sed '${s/$/'"$APPEND"'/}' /etc/hosts
 
 
 # create database
