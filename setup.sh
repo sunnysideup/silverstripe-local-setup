@@ -4,18 +4,18 @@
 
 
 while getopts ":n:p:" opt; do
-  case $opt in
-    a) arg_1="$OPTARG"
-    ;;
-    p) p_out="$OPTARG"
-    ;;
-    \?) echo "Invalid option -$OPTARG" >&2
-    ;;
-  esac
+    case $opt in
+        a) ssversion="$OPTARG"
+        ;;
+        p) name="$OPTARG"
+        ;;
+        \?) echo "Invalid option -$OPTARG" >&2
+        ;;
+    esac
 done
 
-printf "Argument p_out is %s\n" "$p_out"
-printf "Argument arg_1 is %s\n" "$arg_1"
+printf "Name of site is: %s\n" "$name"
+printf "Silverstripe Version is: %s\n" "$ssversion"
 
 # git clone
 
